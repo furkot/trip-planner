@@ -1,0 +1,21 @@
+{
+  "name": "trip-planner",
+  "repo": "furkot/trip-planner",
+  "description": "Embedded trip planner",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "code42day/el": "0.1.0",
+    "component/classes": "1.1.3",
+    "component/event": "0.1.2",
+    "component/querystring": "1.2.0",
+    "pirxpilot/domready": "0.1.0"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": [
+    "lib/index.js",
+    "lib/state.js"
+  ]
+}

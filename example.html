@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <style>
+      .button, .furkot-widget-done {
+        display: inline-block;
+        color: white;
+        background: black;
+        cursor: pointer;
+        padding: .5em;
+        border: none;
+        font-size: 16px;
+        text-decoration: none;
+      }
+      .furkot-widget-done.furkot-widget-inactive  {
+        display: none;
+      }
+      .furkot-widget-done.furkot-widget-active {
+        position: absolute;
+        left: 50%;
+        margin-left: 150px;
+        top: 50%;
+        margin-top: 200px;
+      }
+      .furkot-widget.furkot-widget-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        -webkit-transition: opacity 300ms;
+        transition: opacity 300ms;
+        z-index: 500;
+      }
+      .furkot-widget-inactive iframe {
+        width: 0;
+        height: 0;
+      }
+      .furkot-widget-active iframe {
+        position: absolute;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+        height: 400px;
+        top: 50%;
+        margin-top: -200px;
+      }
+    </style>
+    <script src="build/furkot-trip-planner.js"></script>
+  </head>
+  <body>
+    <span>Plan with Furkot button &lt;a&gt;&nbsp;</span>
+    <a class="button"
+      href="https://trips.furkot.com/trip?stop[name]=Okemo%20Mountain&stop[address]=77%20Okemo%20Ridge%20Road%2C%20Ludlow%2C%20VT%2005149&stop[coordinates][lat]=43.4046&stop[coordinates][lon]=-72.7442&stop[notes]=Family%20Ski%20and%20Snowboard%20Resort%20in%20Ludlow%2C%20VT&stop[url]=http%3A%2F%2Fwww.okemo.com&stop[pin]=14"
+      target="furkot">Visit Okemo Resort on your trip</a>
+    <form method="POST" class="plan-trip" id="plan-trip">
+      <input type="hidden" name="stop[name]" value="Mount Katahdin">
+      <input type="hidden" name="stop[coordinates][lon]" value="-68.921274">
+      <input type="hidden" name="stop[coordinates][lat]" value="45.904354">
+      <input type="hidden" name="stop[url]" value="http://blog.furkot.com/katahdin">
+    </form>
+    <span>Plan with Furkot button &lt;form&gt;&nbsp;</span>
+    <input class="button" type="submit" value="Plan trip to Mount Katahdin" form="plan-trip" formaction="https://trips.furkot.com/trip" >
+  </body>
+</html>
