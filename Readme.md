@@ -13,8 +13,39 @@
 
   [Furkot] trip planner widget displays trip itineraries and supports adding places from any website.
   
-  The integration guide is [here][help]. 
-  
+  The guide to integration options is [here][help]. 
+
+### auto discovery
+
+If elements executing HTTP GET or POST to Furkot (anchors or forms linking to `https://trips.furkot.com/trip`) exist on a page when its document is ready, they will be automatically discovered and modified to activate [Furkot] trip planner widget instead of redirecting to [Furkot].
+
+### .plan(stops)
+
+Dynamic alternative to auto discovery. Activates [Furkot] trip planner widget that allows user to to adds stops to an existing trip or a new trip.
+
+`stops` is an `Array` of objects with `name`, `description`, `coordinates` (lat, lon), `address`, `url` and
+`duration` (in milliseconds). Only `name` and `coordinates` (or `address` in absence of `coordinates`) are required.
+
+```javascript
+var tripPlanner = require('trip-planner');
+var stops = [{
+  name: 'Time Square',
+  coordinates: {
+    lat: 40.7577,
+    lon: -73.9857
+  }
+}, {
+  name: 'Metropolitan Museum',
+  coordinates: {
+    lat: 40.7789,
+    lon: -73.9637
+  }
+}];
+var planner = tripPlanner();
+
+planner.plan(stops);
+```
+
 ## License
 
   The MIT License (MIT)
