@@ -3,7 +3,7 @@ GLOBALVAR=furkotTripPlanner
 BUILD_DIR=build
 
 NODE_BIN=./node_modules/.bin
-SRC = $(wildcard lib/*/*.js)
+SRC = $(wildcard lib/*.js)
 
 %.gz: %
 	gzip --best --stdout $< > $@
