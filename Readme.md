@@ -12,8 +12,8 @@
 ## API
 
   [Furkot] trip planner widget displays trip itineraries and supports adding places from any website.
-  
-  The guide to integration options is [here][help]. 
+
+  The guide to integration options is [here][help].
 
 ### auto discovery
 
@@ -46,6 +46,8 @@ var planner = tripPlanner();
 planner.plan(stops);
 ```
 
+See how it works with [Nooreq].
+
 ## License
 
   The MIT License (MIT)
@@ -72,3 +74,4 @@ planner.plan(stops);
 
 [Furkot]: https://trips.furkot.com
 [help]: http://help.furkot.com/widgets/integrated-trip-planner.html
+[Nooreq]: http://nooreq.com

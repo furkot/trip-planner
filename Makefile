@@ -9,7 +9,7 @@ SRC = $(wildcard lib/*.js)
 	gzip --best --stdout $< > $@
 
 %.min.js: %.js
-	$(NODE_BIN)/uglifyjs $< --mangle --no-copyright --compress --wrap $(PROJECT) --output $@
+	$(NODE_BIN)/uglifyjs $< --mangle --no-copyright --compress --output $@
 
 all: lint build
 
