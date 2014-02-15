@@ -62,5 +62,31 @@
     </form>
     <span>Plan with Furkot button &lt;form&gt;&nbsp;</span>
     <input class="button" type="submit" value="Plan trip to Mount Katahdin" form="plan-trip" formaction="https://trips.furkot.com/trip" >
+    <form id="microdata">
+    </form>
+    <span>Plan with Furkot button - microdata</span>
+    <input class="button furkot-plan" type="submit" value="Go to Bourbon House" form="microdata"/>
+    <div id="property-review" class="col-440 gutter" itemscope itemtype="http://schema.org/LocalBusiness">
+      <div itemscope itemtype="http://schema.org/FoodEstablishment">
+        <div itemscope itemtype="http://schema.org/Restaurant">
+          <b><span class="alt" itemprop="name">Bourbon House</span></b>
+          <meta itemprop="description" content=" On one of the French Quarter's busiest corners is Dickie Brennan's biggest and flashiest restaurant yet (he also owns Palace Café and Dickie Brennan's Steakhouse), and it's a solid hit with seafood aficionados. The raw bar is prime real estate, with its ...">
+          <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="streetAddress">144 Bourbon St., </span>
+            <span itemprop="addressLocality">French Quarter, New Orleans</span>,
+            <span itemprop="addressRegion">LA</span>
+            <span itemprop="postalCode">70130</span>
+          </span>
+          <span>
+            <a href="#google-map" class="map-link" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+							Map It
+							<meta itemprop="latitude" content="29.954136">
+							<meta itemprop="longitude" content="-90.069447">
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="furkot-widget" data-source="microdata"></div>
   </body>
 </html>
