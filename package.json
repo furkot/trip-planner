@@ -1,6 +1,6 @@
 {
   "name": "plan-trip",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Embedded trip planner",
   "main": "index.js",
   "scripts": {
