@@ -1,4 +1,9 @@
 
+0.3.1 / 2016-02-05
+==================
+
+ * support encoded brackets in parameter names
+
 0.3.0 / 2014-02-24
 ==================
 
