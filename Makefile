@@ -13,6 +13,8 @@ SRC = $(wildcard lib/*.js)
 
 all: lint build
 
+check: all test
+
 $(BUILD_DIR)/$(PROJECT).js: components $(SRC)
 	$(NODE_BIN)/component build --out $(BUILD_DIR) --standalone ${GLOBALVAR} --name ${PROJECT}
 
