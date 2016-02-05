@@ -28,7 +28,7 @@ test:
 	$(NODE_BIN)/mocha --recursive --require should
 
 components: component.json
-	@component install --dev
+	$(NODE_BIN)/component install --dev
 
 clean:
 	rm -rf $(BUILD_DIR)
