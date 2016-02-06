@@ -5,6 +5,10 @@
 
 ## Installation
 
+  Install with npm:
+
+    $ npm install --save trip-planner
+
   Install with [component(1)](http://component.io):
 
     $ component install furkot/trip-planner
