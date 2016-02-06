@@ -1,44 +1,48 @@
-PROJECT=furkot-trip-planner
+PROJECT=trip-planner
 GLOBALVAR=furkotTripPlanner
 BUILD_DIR=build
+SCRIPT_NAME=$(BUILD_DIR)/furkot-$(PROJECT)
 
-NODE_BIN=./node_modules/.bin
+BIN=./node_modules/.bin
 SRC = $(wildcard lib/*.js)
 
 %.gz: %
 	gzip --best --stdout $< > $@
 
 %.min.js: %.js
-	$(NODE_BIN)/uglifyjs $< --mangle --no-copyright --compress --output $@
+	$(BIN)/uglifyjs $< --mangle --no-copyright --compress --output $@
 
-all: lint build
+all: check compile
 
-check: all test
+check: lint test
 
-$(BUILD_DIR)/$(PROJECT).js: components $(SRC)
-	$(NODE_BIN)/component build --out $(BUILD_DIR) --standalone ${GLOBALVAR} --name ${PROJECT}
+lint: node_modules
+	$(BIN)/jshint lib test
 
+test: node_modules
+	$(BIN)/mocha --recursive --require should
 
-build: $(BUILD_DIR)/$(PROJECT).js
+compile: $(SCRIPT_NAME).js
 
-lint:
-	$(NODE_BIN)/jshint lib
+build:
+	mkdir -p $@
 
-test:
-	$(NODE_BIN)/mocha --recursive --require should
+$(SCRIPT_NAME).js: node_modules $(SRC) | build
+	$(BIN)/browserify --require ./lib/index.js:$(PROJECT) --standalone ${GLOBALVAR} --outfile $@
 
-components: component.json
-	$(NODE_BIN)/component install --dev
+.DELETE_ON_ERROR: $(SCRIPT_NAME).js
+
+node_modules: package.json
+	npm install
 
 clean:
 	rm -rf $(BUILD_DIR)
 
-.PRECIOUS: $(BUILD_DIR)/$(PROJECT).min.js
-
-dist: $(BUILD_DIR)/$(PROJECT).min.js.gz
-
 distclean: clean
-distclean:
-	rm -rf components
+	rm -rf node_modules
 
-.PHONY: all lint test build dist clean distclean
+.PRECIOUS: $(SCRIPT_NAME).min.js
+
+dist: $(SCRIPT_NAME).min.js.gz
+
+.PHONY: all lint test compile dist clean distclean
