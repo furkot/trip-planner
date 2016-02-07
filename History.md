@@ -1,4 +1,11 @@
 
+1.0.0 / 2016-02-06
+==================
+
+ * update Readme - add npm install option
+ * switch to browserify build
+ * change package name 'plan-trip' -> 'trip-planner'
+
 0.3.3 / 2016-02-06
 ==================
 

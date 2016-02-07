@@ -1,6 +1,6 @@
 {
   "name": "trip-planner",
-  "version": "0.3.3",
+  "version": "1.0.0",
   "description": "Embedded trip planner",
   "author": "Natalia Kowalczyk <melitele@code42day.com>",
   "main": "lib/index.js",
