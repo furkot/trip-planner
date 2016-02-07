@@ -5,13 +5,19 @@
 
 ## Installation
 
-  Install with npm:
+  Install with [npm]:
 
     $ npm install --save trip-planner
 
-  Install with [component(1)](http://component.io):
+  Install with [component]:
 
     $ component install furkot/trip-planner
+
+  Load with a standalone script:
+
+```html
+<script src="https://cdn.furkot.com/scripts/furkot-trip-planner.min.js" defer></script>
+```
 
 ## API
 
@@ -19,19 +25,39 @@
 
   The guide to integration options is [here][help].
 
-### auto discovery
+### initialization
 
-If elements executing HTTP GET or POST to Furkot (anchors or forms linking to `https://trips.furkot.com/trip`) exist on a page when its document is ready, they will be automatically discovered and modified to activate [Furkot] trip planner widget instead of redirecting to [Furkot].
-
-### .plan(stops)
-
-Dynamic alternative to auto discovery. Activates [Furkot] trip planner widget that allows user to to adds stops to an existing trip or a new trip.
-
-`stops` is an `Array` of objects with `name`, `description`, `coordinates` (lat, lon), `address`, `url` and
-`duration` (in milliseconds). Only `name` and `coordinates` (or `address` in absence of `coordinates`) are required.
+  When used with a module bundling framework like [browserify] and [component]:
 
 ```javascript
-var tripPlanner = require('trip-planner');
+var furkotTripPlanner = require('trip-planner');
+```
+
+  When loaded as a standalone, the script instantiates the global variable `furkotTripPlaner`.
+
+### auto discovery
+
+  If elements executing HTTP GET or POST to Furkot (anchors or forms linking to `https://trips.furkot.com/trip`) or elements [annotated with microdata][furkot-microdata] exist on a page when its document is ready, they will be automatically discovered and modified to activate [Furkot] trip planner widget instead of redirecting to [Furkot].
+
+  When loaded as a stanalone script, nothing further needs to be done. In case of a bundling framework, just invoking `require` is sufficient to perform the auto discovery.
+  
+### dynamically added elements
+
+  If there are no auto-discoverable elements on the page when its document is ready, but they are added dynamically later on the trip planner widget can be explicitly instantiated with the array of elements that will activate the widget when clicked. This can be done only once and only when there are no auto-discoverable elements when the document was initially ready - after the trip planner widget is instantiated it will ignore subsequently passed elements.
+
+```javascript
+var elements = [ ... ]; // elements to activate the widget on click
+
+var planner = furkotTripPlanner(elements);
+```
+
+### activate widget programmatically
+
+Instead of using DOM elements to pass parameters, it is possible to activate [Furkot] trip planner widget programmatically by invoking the `.plan(stops)` method passing stops to be added to visitor's trip. `stops` is an `Array` of objects with `name`, `description`, `coordinates` (lat, lon), `address`, `url` and `duration` (in milliseconds). Only `name` and `coordinates` (or `address` in absence of `coordinates`) are required.
+
+```javascript
+var planner = furkotTripPlanner();
+
 var stops = [{
   name: 'Time Square',
   coordinates: {
@@ -45,7 +71,6 @@ var stops = [{
     lon: -73.9637
   }
 }];
-var planner = tripPlanner();
 
 planner.plan(stops);
 ```
@@ -79,3 +104,7 @@ See how it works with [Nooreq].
 [Furkot]: https://trips.furkot.com
 [help]: http://help.furkot.com/widgets/integrated-trip-planner.html
 [Nooreq]: http://nooreq.com
+[component]: https://github.com/componentjs/component
+[npm]: https://www.npmjs.com/
+[browserify]: http://browserify.org/
+[furkot-microdata]: https://github.com/furkot/plan-microdata
