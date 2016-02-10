@@ -1,4 +1,9 @@
 
+1.1.0 / 2016-02-10
+==================
+
+ * handle dynamically added 'Plan with Furkot' buttons
+
 1.0.0 / 2016-02-06
 ==================
 
