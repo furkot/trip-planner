@@ -37,19 +37,21 @@ var furkotTripPlanner = require('trip-planner');
 
 ### auto discovery
 
-  If elements executing HTTP GET or POST to Furkot (anchors or forms linking to `https://trips.furkot.com/trip`) or elements [annotated with microdata][furkot-microdata] exist on a page when its document is ready, they will be automatically discovered and modified to activate [Furkot] trip planner widget instead of redirecting to [Furkot].
+  If elements executing HTTP GET or POST to Furkot (anchors or forms linking to `https://trips.furkot.com/trip`) or elements [annotated with microdata][furkot-microdata] exist on a page when its document is ready, they will be automatically discovered and modified to activate [Furkot] trip planner widget upon click instead of redirecting to [Furkot].
 
   When loaded as a stanalone script, nothing further needs to be done. In case of a bundling framework, just invoking `require` is sufficient to perform the auto discovery.
   
 ### dynamically added elements
 
-  If there are no auto-discoverable elements on the page when its document is ready, but they are added dynamically later on the trip planner widget can be explicitly instantiated with the array of elements that will activate the widget when clicked. This can be done only once and only when there are no auto-discoverable elements when the document was initially ready - after the trip planner widget is instantiated it will ignore subsequently passed elements.
-
+  If more elements are added dynamically to the page, they can be discovered and modified to activate [Furkot] trip planner widget upon click by triggering the discovery process:
+  
 ```javascript
-var elements = [ ... ]; // elements to activate the widget on click
+var container = ... // container with elements to activate the widget on click
 
-var planner = furkotTripPlanner(elements);
+furkotTripPlanner(container);
 ```
+
+The `container` is a single DOM element that contains dynamically added elements. It can be the `document` to process the entire page. The elements that are already discovered and modified are ignored.
 
 ### activate widget programmatically
 
