@@ -1,3 +1,5 @@
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
 
 # Furkot Trip Planner Widget
 
@@ -110,3 +112,9 @@ See how it works with [Nooreq].
 [npm]: https://www.npmjs.com/
 [browserify]: http://browserify.org/
 [furkot-microdata]: https://github.com/furkot/plan-microdata
+
+[npm-image]: https://img.shields.io/npm/v/trip-planner.svg
+[npm-url]: https://npmjs.org/package/trip-planner
+
+[travis-url]: https://travis-ci.org/furkot/trip-planner
+[travis-image]: https://img.shields.io/travis/furkot/trip-planner.svg
