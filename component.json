@@ -2,7 +2,7 @@
   "name": "trip-planner",
   "repo": "furkot/trip-planner",
   "description": "Embedded trip planner",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "keywords": [],
   "dependencies": {
     "code42day/dataset": "0.2.2",

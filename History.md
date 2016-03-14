@@ -1,4 +1,9 @@
 
+1.1.1 / 2016-03-14
+==================
+
+ * convert duration to Integer before passing it to Furkot
+
 1.1.0 / 2016-02-10
 ==================
 
