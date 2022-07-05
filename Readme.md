@@ -11,10 +11,6 @@
 
     $ npm install --save trip-planner
 
-  Install with [component]:
-
-    $ component install furkot/trip-planner
-
   Load with a standalone script:
 
 ```html
