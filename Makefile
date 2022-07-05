@@ -33,7 +33,7 @@ $(SCRIPT_NAME).js: node_modules $(SRC) | build
 .DELETE_ON_ERROR: $(SCRIPT_NAME).js
 
 node_modules: package.json
-	npm install
+	yarn
 
 clean:
 	rm -rf $(BUILD_DIR)
