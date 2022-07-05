@@ -27,10 +27,27 @@ compile: $(SCRIPT_NAME).js
 build:
 	mkdir -p $@
 
-$(SCRIPT_NAME).js: node_modules $(SRC) | build
-	$(BIN)/browserify --require ./lib/index.js:$(PROJECT) --standalone ${GLOBALVAR} --outfile $@
+ESBUILD_OPTS += --bundle \
+	--log-level=warning \
+	--color=false \
+	--tree-shaking=true \
+	--global-name=${GLOBALVAR} \
+	--target=es2019
 
-.DELETE_ON_ERROR: $(SCRIPT_NAME).js
+
+$(SCRIPT_NAME).js: lib/index.js $(SRC) | node_modules build
+	$(BIN)/esbuild $< \
+		$(ESBUILD_OPTS) \
+		--sourcemap=linked \
+		--outfile=$@
+
+$(SCRIPT_NAME).min.js: lib/index.js $(SRC) | node_modules build
+	$(BIN)/esbuild $< \
+		$(ESBUILD_OPTS) \
+		--drop:console \
+		--drop:debugger \
+		--minify \
+		--outfile=$@
 
 node_modules: package.json
 	yarn

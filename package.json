@@ -21,11 +21,10 @@
     "plan-microdata": "^1.0.0"
   },
   "devDependencies": {
-    "browserify": "~17",
+    "esbuild": "^0.14.48",
     "jshint": "~2",
     "mocha": "~10",
-    "should": "~13",
-    "uglify-js": "~2.4.10"
+    "should": "~13"
   },
   "browser": {
     "el": "el-component",
