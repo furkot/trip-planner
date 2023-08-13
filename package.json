@@ -12,17 +12,14 @@
     "browser"
   ],
   "dependencies": {
-    "component-querystring": "^1.3.0",
-    "plan-microdata": "^1.0.0"
+    "plan-microdata": "^1.0.0",
+    "qs": "^6.11.0"
   },
   "devDependencies": {
     "esbuild": "^0.14.48",
     "jshint": "~2",
     "mocha": "~10",
     "should": "~13"
-  },
-  "browser": {
-    "querystring": "component-querystring"
   },
   "license": "MIT",
   "bugs": {
