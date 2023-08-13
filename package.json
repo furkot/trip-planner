@@ -17,9 +17,7 @@
   },
   "devDependencies": {
     "esbuild": "^0.14.48",
-    "jshint": "~2",
-    "mocha": "~10",
-    "should": "~13"
+    "jshint": "~2"
   },
   "license": "MIT",
   "bugs": {

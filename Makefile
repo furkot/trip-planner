@@ -20,7 +20,7 @@ lint: node_modules
 	$(BIN)/jshint lib test
 
 test: node_modules
-	$(BIN)/mocha --recursive --require should
+	node --test
 
 compile: $(SCRIPT_NAME).js
 
