@@ -12,7 +12,7 @@
     "browser"
   ],
   "dependencies": {
-    "plan-microdata": "^1.0.0",
+    "plan-microdata": "~2",
     "qs": "^6.11.0"
   },
   "devDependencies": {
