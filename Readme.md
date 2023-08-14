@@ -1,5 +1,5 @@
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 
 # Furkot Trip Planner Widget
 
@@ -10,10 +10,6 @@
   Install with [npm]:
 
     $ npm install --save trip-planner
-
-  Install with [component]:
-
-    $ component install furkot/trip-planner
 
   Load with a standalone script:
 
@@ -113,8 +109,8 @@ See how it works with [Nooreq].
 [browserify]: http://browserify.org/
 [furkot-microdata]: https://github.com/furkot/plan-microdata
 
-[npm-image]: https://img.shields.io/npm/v/trip-planner.svg
-[npm-url]: https://npmjs.org/package/trip-planner
+[npm-image]: https://img.shields.io/npm/v/@furkot/trip-planner
+[npm-url]: https://npmjs.org/package/@furkot/trip-planner
 
-[travis-url]: https://travis-ci.org/furkot/trip-planner
-[travis-image]: https://img.shields.io/travis/furkot/trip-planner.svg
+[build-url]: https://github.com/furkot/trip-planner/actions/workflows/check.yaml
+[build-image]: https://img.shields.io/github/workflow/status/furkot/trip-planner/check
