@@ -1,4 +1,19 @@
 
+2.0.0 / 2023-08-14
+==================
+
+ * upgrade plan-microdata to ~2
+ * remove unused mocha and should dependencies
+ * replace querystring with qs
+ * remove `--webkit` properties from approved list
+ * remove outdated dependencies
+ * remove references to `component` framework
+ * modernize source code
+ * switch to esbuild for bunling and minifying
+ * fix lint issues
+ * switch to GitHub actions for CI builds
+ * change name to @furkot/trip-planner
+
 1.1.1 / 2016-03-14
 ==================
 
