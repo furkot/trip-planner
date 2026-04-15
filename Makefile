@@ -49,9 +49,6 @@ $(SCRIPT_NAME).min.js: lib/index.js $(SRC) | node_modules build
 		--minify \
 		--outfile=$@
 
-node_modules: package.json
-	yarn
-
 clean:
 	rm -rf $(BUILD_DIR)
 
