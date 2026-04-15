@@ -12,12 +12,12 @@
     "browser"
   ],
   "dependencies": {
-    "plan-microdata": "~2",
-    "qs": "^6.11.0"
+    "plan-microdata": "~2.0.0",
+    "qs": "^6.15.1"
   },
   "devDependencies": {
-    "esbuild": "^0.14.48",
-    "jshint": "~2"
+    "esbuild": "^0.28.0",
+    "jshint": "~2.13.6"
   },
   "license": "MIT",
   "bugs": {
