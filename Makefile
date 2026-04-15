@@ -16,8 +16,11 @@ all: check compile
 
 check: lint test
 
-lint: node_modules
-	$(BIN)/jshint lib test
+lint:
+	./node_modules/.bin/biome ci
+
+format:
+	./node_modules/.bin/biome check --fix
 
 test: node_modules
 	node --test
@@ -59,4 +62,4 @@ distclean: clean
 
 dist: $(SCRIPT_NAME).min.js.gz
 
-.PHONY: all lint test compile dist clean distclean
+.PHONY: all format lint test compile dist clean distclean

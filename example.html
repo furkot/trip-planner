@@ -1,17 +1,18 @@
-<html>
+<html lang="en">
   <head>
     <style>
-      .button, .furkot-widget-done {
+      .button,
+      .furkot-widget-done {
         display: inline-block;
         color: white;
         background: black;
         cursor: pointer;
-        padding: .5em;
+        padding: 0.5em;
         border: none;
         font-size: 16px;
         text-decoration: none;
       }
-      .furkot-widget-done.furkot-widget-inactive  {
+      .furkot-widget-done.furkot-widget-inactive {
         display: none;
       }
       .furkot-widget-done.furkot-widget-active {
@@ -49,37 +50,57 @@
     </style>
     <script src="build/furkot-trip-planner.js" defer></script>
     <script>
-      setTimeout(function () {
-        document.getElementById('dynamic').insertAdjacentHTML('beforeend',
-            '<a class="button" href="https://trips.furkot.com/trip?stop[name]=Okemo%20Mountain&stop[address]=77%20Okemo%20Ridge%20Road%2C%20Ludlow%2C%20VT%2005149&stop[coordinates][lat]=43.4046&stop[coordinates][lon]=-72.7442&stop[notes]=Family%20Ski%20and%20Snowboard%20Resort%20in%20Ludlow%2C%20VT&stop[url]=http%3A%2F%2Fwww.okemo.com&stop[pin]=14" target="furkot">Visit Okemo Resort on your trip</a>');
-       furkotTripPlanner(document.body);
+      setTimeout(() => {
+        document
+          .getElementById('dynamic')
+          .insertAdjacentHTML(
+            'beforeend',
+            '<a class="button" href="https://trips.furkot.com/trip?stop[name]=Okemo%20Mountain&stop[address]=77%20Okemo%20Ridge%20Road%2C%20Ludlow%2C%20VT%2005149&stop[coordinates][lat]=43.4046&stop[coordinates][lon]=-72.7442&stop[notes]=Family%20Ski%20and%20Snowboard%20Resort%20in%20Ludlow%2C%20VT&stop[url]=http%3A%2F%2Fwww.okemo.com&stop[pin]=14" target="furkot">Visit Okemo Resort on your trip</a>'
+          );
+        furkotTripPlanner(document.body);
       }, 1000);
     </script>
   </head>
   <body>
     <span>Plan with Furkot button &lt;a&gt;&nbsp;</span>
-    <a class="button"
+    <a
+      class="button"
       href="https://trips.furkot.com/trip?stop[name]=Okemo%20Mountain&stop[address]=77%20Okemo%20Ridge%20Road%2C%20Ludlow%2C%20VT%2005149&stop[coordinates][lat]=43.4046&stop[coordinates][lon]=-72.7442&stop[notes]=Family%20Ski%20and%20Snowboard%20Resort%20in%20Ludlow%2C%20VT&stop[url]=http%3A%2F%2Fwww.okemo.com&stop[pin]=14&stop[duration]=300000"
-      target="furkot">Visit Okemo Resort on your trip</a>
+      target="furkot"
+      >Visit Okemo Resort on your trip</a
+    >
     <span>and dynamically added &lt;a&gt;&nbsp;</span>
     <span id="dynamic"></span>
     <form method="POST" class="plan-trip" id="plan-trip">
-      <input type="hidden" name="stop[name]" value="Mount Katahdin">
-      <input type="hidden" name="stop[coordinates][lon]" value="-68.921274">
-      <input type="hidden" name="stop[coordinates][lat]" value="45.904354">
-      <input type="hidden" name="stop[url]" value="http://blog.furkot.com/katahdin">
+      <input type="hidden" name="stop[name]" value="Mount Katahdin" />
+      <input type="hidden" name="stop[coordinates][lon]" value="-68.921274" />
+      <input type="hidden" name="stop[coordinates][lat]" value="45.904354" />
+      <input type="hidden" name="stop[url]" value="http://blog.furkot.com/katahdin" />
     </form>
     <span>Plan with Furkot button &lt;form&gt;&nbsp;</span>
-    <input class="button" type="submit" value="Plan trip to Mount Katahdin" form="plan-trip" formaction="https://trips.furkot.com/trip" >
-    <form id="microdata">
-    </form>
+    <input
+      class="button"
+      type="submit"
+      value="Plan trip to Mount Katahdin"
+      form="plan-trip"
+      formaction="https://trips.furkot.com/trip"
+    />
+    <form id="microdata"></form>
     <span>Plan with Furkot button - microdata</span>
-    <input class="button furkot-plan" type="submit" value="Go to Bourbon House" form="microdata"/>
-    <div id="property-review" class="col-440 gutter" itemscope itemtype="http://schema.org/LocalBusiness">
+    <input class="button furkot-plan" type="submit" value="Go to Bourbon House" form="microdata" />
+    <div
+      id="property-review"
+      class="col-440 gutter"
+      itemscope
+      itemtype="http://schema.org/LocalBusiness"
+    >
       <div itemscope itemtype="http://schema.org/FoodEstablishment">
         <div itemscope itemtype="http://schema.org/Restaurant">
           <b><span class="alt" itemprop="name">Bourbon House</span></b>
-          <meta itemprop="description" content=" On one of the French Quarter's busiest corners is Dickie Brennan's biggest and flashiest restaurant yet (he also owns Palace Café and Dickie Brennan's Steakhouse), and it's a solid hit with seafood aficionados. The raw bar is prime real estate, with its ...">
+          <meta
+            itemprop="description"
+            content=" On one of the French Quarter's busiest corners is Dickie Brennan's biggest and flashiest restaurant yet (he also owns Palace Café and Dickie Brennan's Steakhouse), and it's a solid hit with seafood aficionados. The raw bar is prime real estate, with its ..."
+          />
           <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
             <span itemprop="streetAddress">144 Bourbon St., </span>
             <span itemprop="addressLocality">French Quarter, New Orleans</span>,
@@ -87,10 +108,16 @@
             <span itemprop="postalCode">70130</span>
           </span>
           <span>
-            <a href="#google-map" class="map-link" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-							Map It
-							<meta itemprop="latitude" content="29.954136">
-							<meta itemprop="longitude" content="-90.069447">
+            <a
+              href="#google-map"
+              class="map-link"
+              itemprop="geo"
+              itemscope
+              itemtype="http://schema.org/GeoCoordinates"
+            >
+              Map It
+              <meta itemprop="latitude" content="29.954136" />
+              <meta itemprop="longitude" content="-90.069447" />
             </a>
           </span>
         </div>

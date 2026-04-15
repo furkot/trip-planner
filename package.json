@@ -16,8 +16,8 @@
     "qs": "^6.15.1"
   },
   "devDependencies": {
-    "esbuild": "^0.28.0",
-    "jshint": "~2.13.6"
+    "@biomejs/biome": "^2.4.12",
+    "esbuild": "^0.28.0"
   },
   "license": "MIT",
   "bugs": {
