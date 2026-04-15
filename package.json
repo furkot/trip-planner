@@ -13,8 +13,7 @@
     "browser"
   ],
   "dependencies": {
-    "plan-microdata": "~2.0.0",
-    "qs": "^6.15.1"
+    "plan-microdata": "~2.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.12",
